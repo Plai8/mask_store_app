@@ -76,7 +76,5 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
-#mask-map {
-    height: 100vh;
-}
+
 </style>
