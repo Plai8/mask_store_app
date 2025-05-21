@@ -96,27 +96,27 @@ export default {
         cursor: pointer;
 
         .modal-container {
+            width: 700px;
+            padding: 50px 30px;
+            border-radius: 10px;
+            background-color: #fff;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #fff;
-            width: 50%;
-            padding: 50px 30px;
             z-index: 1001;
-            border-radius: 10px;
 
             .store-name {
                 font-size: 26px;
                 font-weight: 600;
-                color: #26a69a;
+                color: #333333;
                 margin-bottom: 20px;
             }
 
             .title {
                 margin: 10px 0;
                 font-size: 18px;
-                color: #26a69a
+                color: #333333
             }
 
             table {
@@ -124,7 +124,7 @@ export default {
                 margin: 20px 0;
 
                 th {
-                    background-color: #26a69a;
+                    background-color: #333333;
                     padding: 10px;
                     color: #fff
                 }

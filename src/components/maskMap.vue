@@ -22,14 +22,14 @@ export default {
     methods: {
         addMarker(item) {
             const ICON = {
-                iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-marker/master/img/marker-icon-2x-violet.png",
-                shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-                iconSize: [25, 4],
-                iconAnchor: [12, 41],
-                popupAnchor: [1, -34],
-                shodowSize: [41, 41],
+                iconUrl: "location-dot.png",
+                iconSize:[40,40]
             };
-            const marker = L.marker({ lat: item.longitude, lng: item.latitude }, ICON)
+            const customIcon  = L.icon(ICON);
+            const markerOptions = {
+                icon:customIcon
+            }
+            const marker = L.marker({ lat: item.longitude, lng: item.latitude }, markerOptions)
                 .addTo(this.map)
                 .bindPopup(`<h2 class="popup-name">${item.name}</h2>`)
         },
@@ -76,5 +76,9 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
+#mask-map{
+    width: 100%;
+    height: 100vh;
+}
 
 </style>

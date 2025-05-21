@@ -14,10 +14,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faAngleUp  } from '@fortawesome/free-solid-svg-icons'
 /* add icons to the library */
 library.add(faMagnifyingGlass);
 library.add(faLocationDot);
-library.add(faChevronDown );
+library.add(faChevronDown);
+library.add(faAngleUp);
 
 
 const pinia = createPinia();

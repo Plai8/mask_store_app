@@ -1,10 +1,12 @@
 <template>
   <div id="main-area">
-    <div class="aside-menu">
+    <div class="aside-menu-wrapper">
       <aside-menu />
     </div>
     <lightbox />
-   <MaskMap />
+    <div id="mask-map-wrapper">
+      <MaskMap />
+    </div>
   </div>
 </template>
 
@@ -58,12 +60,17 @@ body {
     display: flex;
     position: relative;
 
-    #mask-map {
-      width: 75%;
+    #mask-map-wrapper {
+      width:100%;
+      height: 100vh;
     }
 
-    .aside-menu {
-      width: 25%;
+    .aside-menu-wrapper {
+      position: absolute;
+      top:0;
+      left:0;
+      width:400px;
+      z-index: 1100;
     }
   }
 
