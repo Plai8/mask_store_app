@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:"/mask-app/",
+  base:"/mask_store_app/",
   plugins: [
     vue(),
     vueDevTools(),
