@@ -1,5 +1,6 @@
 <script>
 import { useStoresInfo } from '@/stores/storesInfo'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default {
     name: "asideMenu",
@@ -41,7 +42,7 @@ export default {
         openInfoBox(sid) {
             this.store.$patch({
                 showModal: true,
-                infoBoxSid: sid
+                infoBoxSid: sid,
             });
         },
         setCurrCity(city) {
@@ -115,7 +116,7 @@ export default {
                     <input type="text" name="key-word" id="key-word" placeholder="請輸入關鍵字" v-model="keyWord">
                 </div>
             </div>
-            <div class="mask-stores-result-area">
+            <div class="mask-stores-result-area" v-if="filteredStore.length">
                 <div class="mask-store-info-card" v-for="store in filteredStore" :key="store.id"
                     @click=" openInfoBox(store.id)">
                     <div class="store-info">
@@ -127,6 +128,9 @@ export default {
                         <p>最後更新時間：{{ store.updated }}</p>
                     </div>
                 </div>
+            </div>
+            <div v-else class="mask-stores-result-area no-result">
+                <p>查無此藥局</p>
             </div>
             <button class="collapse-side-btn close" @click="isShow = false">
                 <font-awesome-icon :icon="['fas', 'angle-up']" rotation=270 />
@@ -227,7 +231,16 @@ aside {
         border-radius: 5px;
         outline: none;
     }
+    .no-result {
+        position: relative;
+        p {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
+    }
     .mask-stores-result-area {
         overflow: auto;
         width: 100%;
@@ -303,12 +316,12 @@ aside {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     cursor: pointer;
-    z-index: 1099;
+    z-index: 1200;
 }
 
 .open {
     left: 0;
-    z-index:1120;
+    z-index:1200;
 }
 
 .slide-enter-active,

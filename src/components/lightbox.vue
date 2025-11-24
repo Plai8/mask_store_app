@@ -78,62 +78,75 @@ export default {
 </template>
 <style scoped lang="scss">
 .modal-mask {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+
+  .modal-wrapper {
     width: 100%;
     height: 100vh;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 11000;
+    background-color: rgba(#000000, 0.3);
+    z-index: 1000;
+    cursor: pointer;
 
-    .modal-wrapper {
+    .modal-container {
+      width: 80%;
+      max-width: 700px;
+      padding: 50px 30px;
+      border-radius: 10px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1001;
+
+      .store-name {
+        font-size: 26px;
+        font-weight: 600;
+        color: #333333;
+        margin-bottom: 20px;
+      }
+
+      .title {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #333333;
+      }
+
+      table {
         width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba($color: #000000, $alpha: 0.3);
-        z-index: 1000;
-        cursor: pointer;
+        margin: 20px 0;
 
-        .modal-container {
-            width: 700px;
-            padding: 50px 30px;
-            border-radius: 10px;
-            background-color: #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1001;
-
-            .store-name {
-                font-size: 26px;
-                font-weight: 600;
-                color: #333333;
-                margin-bottom: 20px;
-            }
-
-            .title {
-                margin: 10px 0;
-                font-size: 18px;
-                color: #333333
-            }
-
-            table {
-                width: 100%;
-                margin: 20px 0;
-
-                th {
-                    background-color: #333333;
-                    padding: 10px;
-                    color: #fff
-                }
-
-                td {
-                    text-align: center;
-                }
-            }
+        th {
+          background-color: #333333;
+          padding: 10px;
+          color: #fff;
         }
+
+        td {
+          text-align: center;
+        }
+      }
     }
+  }
 }
+
+@media screen and (max-width: 500px) {
+  .modal-mask {
+    .modal-wrapper {
+      .modal-container {
+        width: 95%;
+        padding: 50px 15px;
+      }
+    }
+  }
+}
+
 </style>

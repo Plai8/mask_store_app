@@ -69,7 +69,8 @@ body {
       position: absolute;
       top:0;
       left:0;
-      width:400px;
+      width: 90%;
+      max-width:400px;
       z-index: 1100;
     }
   }
